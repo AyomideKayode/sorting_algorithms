@@ -34,3 +34,56 @@
 6. The process continues until the outer loop has traversed the entire list, effectively sorting it.
 
 - [Further reading](https://en.wikipedia.org/wiki/Insertion_sort)
+
+- Alternative implementation might be to have a separate function for node swapping:
+	```sh
+	void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
+	{
+		if (node1 == NULL || node2 == NULL)
+			return;
+
+		if (node1->prev)
+			node1->prev->next = node2;
+		else
+			*list = node2;
+
+		if (node2->prev)
+			node2->prev->next = node1;
+
+		if (node1->next)
+			node1->next->prev = node2;
+
+		if (node2->next)
+			node2->next->prev = node1;
+
+		listint_t *temp = node1->prev;
+		node1->prev = node2->prev;
+		node2->prev = temp;
+
+		temp = node1->next;
+		node1->next = node2->next;
+		node2->next = temp;
+	}
+
+	void insertion_sort_list(listint_t **list)
+	{
+		listint_t *current, *sorted;
+
+		if (list == NULL || *list == NULL || (*list)->next == NULL)
+			return;
+
+		current = (*list)->next;
+
+		while (current)
+		{
+			sorted = current;
+			current = current->next;
+
+			while (sorted->prev && sorted->n < sorted->prev->n)
+			{
+				swap_nodes(list, sorted, sorted->prev);
+				print_list(*list); /* print list after each swap */
+			}
+		}
+	}
+	```
