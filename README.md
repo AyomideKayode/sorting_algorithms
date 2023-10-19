@@ -192,10 +192,33 @@
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ 
 	```
+2. [Selection sort](./2-selection_sort.c) :
+- Write a function that sorts an array of integers in ascending order using the [Selection sort](https://en.wikipedia.org/wiki/Selection_sort) algorithm
+	- Prototype: `void selection_sort(int *array, size_t size);`
+	- You’re expected to print the array after each time you swap two elements (See example below)
+- Write in the file `2-O`, the big O notations of the time complexity of the Selection sort algorithm, with 1 notation per line:
+	- in the best case
+	- in the average case
+	- in the worst case
+	```sh
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 2-main.c 2-selection_sort.c print_array.c -o select
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./select 
+	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
+
+	7, 48, 99, 71, 13, 52, 96, 73, 86, 19
+	7, 13, 99, 71, 48, 52, 96, 73, 86, 19
+	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
+	7, 13, 19, 48, 71, 52, 96, 73, 86, 99
+	7, 13, 19, 48, 52, 71, 96, 73, 86, 99
+	7, 13, 19, 48, 52, 71, 73, 96, 86, 99
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ 
+	```
+
 
 
 | Task | File |
 | ---- | ---- |
-|  |
-| 2. Selection sort | [SOON](./) |
 | 3. Quick sort | [SOON](./) |
