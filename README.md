@@ -300,3 +300,44 @@
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 	kazzywiz@Kazzywiz:~/sorting_algorithms$
 	```
+6. [Counting sort](./102-counting_sort.c) :
+- Write a function that sorts an array of integers in ascending order using the [Counting sort](https://en.wikipedia.org/wiki/Counting_sort) algorithm
+	- Prototype: `void counting_sort(int *array, size_t size);`
+	- You can assume that array will contain only numbers `>= 0`
+	- You are allowed to use `malloc` and `free` for this task
+	- You’re expected to print your `counting array` once it is set up (See example below)
+		- This array is of size `k + 1` where `k` is the largest number in array
+- Write in the file `102-O`, the big O notations of the time complexity of the Counting sort algorithm, with 1 notation per line:
+	- in the best case
+	- in the average case
+	- in the worst case
+	```sh
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 102-main.c 102-counting_sort.c print_array.c -o counting
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./counting 
+	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
+
+	0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 10
+
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ valgrind ./counting 
+	==6148== Memcheck, a memory error detector
+	==6148== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+	==6148== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+	==6148== Command: ./counting
+	==6148== 
+	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
+
+	0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 10
+
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+	==6148== 
+	==6148== HEAP SUMMARY:
+	==6148==     in use at exit: 0 bytes in 0 blocks
+	==6148==   total heap usage: 3 allocs, 3 frees, 1,464 bytes allocated
+	==6148== 
+	==6148== All heap blocks were freed -- no leaks are possible
+	==6148== 
+	==6148== For lists of detected and suppressed errors, rerun with: -s
+	==6148== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ 
+	```
