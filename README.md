@@ -261,3 +261,42 @@
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ 
 	```
+5. [Cocktail shaker sort](./101-cocktail_sort_list.c) :
+- Write a function that sorts a doubly linked list of integers in ascending order using the [Cocktail shaker sort](https://en.wikipedia.org/wiki/Cocktail_shaker_sort) algorithm
+	- Prototype: `void cocktail_sort_list(listint_t **list);`
+	- You are not allowed to modify the integer `n` of a node. You have to swap the nodes themselves.
+	- You’re expected to print the `list` after each time you swap two elements (See example below)
+- Write in the file `101-O`, the big O notations of the time complexity of the Cocktail shaker sort algorithm, with 1 notation per line:
+	- in the best case
+	- in the average case
+	- in the worst case
+	```sh
+	kazzywiz@Kazzywiz:~/sorting_algorithms$  gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 101-main.c 101-cocktail_sort_list.c print_list.c -o cocktail
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./cocktail 
+	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
+
+	19, 48, 71, 99, 13, 52, 96, 73, 86, 7
+	19, 48, 71, 13, 99, 52, 96, 73, 86, 7
+	19, 48, 71, 13, 52, 99, 96, 73, 86, 7
+	19, 48, 71, 13, 52, 96, 99, 73, 86, 7
+	19, 48, 71, 13, 52, 96, 73, 99, 86, 7
+	19, 48, 71, 13, 52, 96, 73, 86, 99, 7
+	19, 48, 71, 13, 52, 96, 73, 86, 7, 99
+	19, 48, 71, 13, 52, 96, 73, 7, 86, 99
+	19, 48, 71, 13, 52, 96, 7, 73, 86, 99
+	19, 48, 71, 13, 52, 7, 96, 73, 86, 99
+	19, 48, 71, 13, 7, 52, 96, 73, 86, 99
+	19, 48, 71, 7, 13, 52, 96, 73, 86, 99
+	19, 48, 7, 71, 13, 52, 96, 73, 86, 99
+	19, 7, 48, 71, 13, 52, 96, 73, 86, 99
+	7, 19, 48, 71, 13, 52, 96, 73, 86, 99
+	7, 19, 48, 13, 71, 52, 96, 73, 86, 99
+	7, 19, 48, 13, 52, 71, 96, 73, 86, 99
+	7, 19, 48, 13, 52, 71, 73, 96, 86, 99
+	7, 19, 48, 13, 52, 71, 73, 86, 96, 99
+	7, 19, 13, 48, 52, 71, 73, 86, 96, 99
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+	kazzywiz@Kazzywiz:~/sorting_algorithms$
+	```
