@@ -44,6 +44,7 @@ void cocktail_sort_list(listint_t **list)
 			else
 				current = current->prev;
 		}
+		current = current->next;
 	}
 }
 
