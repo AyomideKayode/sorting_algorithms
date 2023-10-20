@@ -234,23 +234,28 @@
 	7, 48, 99, 71, 13, 52, 96, 73, 86, 19
 	7, 13, 99, 71, 48, 52, 96, 73, 86, 19
 	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
-	7, 13, 19, 71, 48, 52, 96, 73, 86, 99
 	7, 13, 19, 71, 48, 52, 73, 96, 86, 99
 	7, 13, 19, 71, 48, 52, 73, 86, 96, 99
-	7, 13, 19, 71, 48, 52, 73, 86, 96, 99
-	7, 13, 19, 71, 48, 52, 73, 86, 96, 99
-	7, 13, 19, 71, 48, 52, 73, 86, 96, 99
-	7, 13, 19, 71, 48, 52, 73, 86, 96, 99
 	7, 13, 19, 48, 71, 52, 73, 86, 96, 99
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ 
+	```
+4. [Shell sort - Knuth Sequence](./100-shell_sort.c) :
+- Write a function that sorts an array of integers in ascending order using the [Shell sort](https://en.wikipedia.org/wiki/Shellsort) algorithm, using the `Knuth sequence`
+	- Prototype: `void shell_sort(int *array, size_t size);`
+	- You must use the following sequence of intervals (a.k.a the Knuth sequence):
+		- `n+1 = n * 3 + 1`
+		- `1, 4, 13, 40, 121, ...`
+	- You’re expected to print the `array` each time you decrease the interval (See example below).
+- **No big O notations of the time complexity of the Shell sort (Knuth sequence) algorithm needed - as the complexity is dependent on the size of array and gap.**
+	```sh
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 100-main.c 100-shell_sort.c print_array.c -o shell
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./shell 
+	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
+
+	13, 7, 96, 71, 19, 48, 99, 73, 86, 52
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
