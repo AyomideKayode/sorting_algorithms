@@ -30,3 +30,64 @@
 	- It takes two parameters: array and size.
 	- It checks if the input array is NULL or if the size is less than 2 (no sorting needed for 0 or 1 element), and if so, it returns early.
 	- Otherwise, it calls the quick_sort_recursive function to start the sorting process from the entire array.
+
+	```c
+	int lomuto_partition(int *array, int low, int high, size_t size)
+	{
+		int pivot = array[high];
+		int j, i = low - 1;
+		size_t k;
+
+		for (j = low; j <= high - 1; j++)
+		{
+			if (array[j] < pivot)
+			{
+				i++;
+				swap(&array[i], &array[j]);
+				for (k = 0; k < size; k++)
+				{
+					printf("%d", array[k]);
+					if (k < size - 1)
+					{
+						printf(", ");
+					}
+				}
+				printf("\n");
+			}
+		}
+
+		swap(&array[i + 1], &array[high]);
+		for (k = 0; k < size; k++)
+		{
+			printf("%d", array[k]);
+			if (k < size - 1)
+			{
+				printf(", ");
+			}
+		}
+		printf("\n");
+
+		return (i + 1);
+	}
+	```
+
+* So I had to refactor the code cuz I was getting some red checks. Now I see that my lomuto partition function had some unnecessary loop implementation and I sort of printed out the array by "hand" when I could have used the default `print_array.c` function. Plus some other things sha.
+* The previous version, I considered only if `array[j] < pivot` instead of the condition `array[j] <= pivot` that should be used to determine whether an element is <em>**less than or equal**</em> to the pivot, and it triggers swaps when needed.
+	- Note to self: `for loops` should not always be the go-to.🤥😇
+* And now, I've added another check for when performing a swap, there's an additional check if (i != j) to ensure that an unnecessary swap is avoided if i and j are already pointing to the same position.
+* The partitioning process now works with both greater-than and less-than comparisons, enhancing its stability. (For reference the previous `lomuto_partion` code is included in this markdown.)
+* So....
+
+2. `lomuto_partition` function: <em>modified</em>
+	- `lomuto_partition` takes four parameters: `array`, `low`, `high`, and `size`. It partitions the array using the Lomuto partition scheme and returns the index of the pivot element.
+	- `low` and `high` are the indices specifying the range of the array to be partitioned.
+	- The function selects the pivot element as the last element in the given range (i.e., `array[high]`).
+	- It initializes two indices, `i` and `j`, with `i` pointing to one position before the `low` index.
+	- The partitioning process is performed using a single loop, which goes from `low` to `high-1` (inclusive).
+	- Within the loop:
+		- If the current element (`array[j]`) is less than or equal to the pivot element, it performs the following actions:
+			- Increments `i` to move it one step to the right.
+			- If `i` is different from `j`, it swaps the elements at positions `i` and `j` and prints the array to visualize the swap.
+		- Increments `j` to continue scanning through the array.
+	- After the loop, the pivot element is swapped with the element at index `i + 1`, placing the pivot in its correct position.
+	- The function returns `i + 1` as the new pivot index.
