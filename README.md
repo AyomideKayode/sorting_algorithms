@@ -1,4 +1,5 @@
 # Project: 0x1B. C - Sorting algorithms & Big O
+<img src="./main/willy-wonka-bubble-sort.png" alt="Willy-Wonka" width=100%>
 
 ## Resources
 
