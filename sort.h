@@ -39,5 +39,7 @@ void print_parts(int *array, size_t min, size_t max);
 void top_down(int *A, int *B, size_t min, size_t mid, size_t max);
 void top_down_split(int *A, int *B, size_t min, size_t max);
 void merge_sort(int *array, size_t size);
+void heapify(int *array, size_t size, size_t index, size_t size_original);
+void heap_sort(int *array, size_t size);
 
 #endif /*SORT_H_*/
