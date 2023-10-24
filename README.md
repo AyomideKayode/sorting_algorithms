@@ -124,7 +124,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 0-bubble_sort.c 0-main.c print_array.c -o bubble
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 0-bubble_sort.c 0-main.c print_array.c -o bubble
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./bubble
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -163,7 +163,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 1-main.c 1-insertion_sort_list.c print_list.c -o insertion
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 1-main.c 1-insertion_sort_list.c print_list.c -o insertion
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./insertion 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -227,7 +227,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 3-main.c 3-quick_sort.c print_array.c -o quick
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 3-main.c 3-quick_sort.c print_array.c -o quick
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./quick 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -251,7 +251,7 @@
 	- You’re expected to print the `array` each time you decrease the interval (See example below).
 - **No big O notations of the time complexity of the Shell sort (Knuth sequence) algorithm needed - as the complexity is dependent on the size of array and gap.**
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 100-main.c 100-shell_sort.c print_array.c -o shell
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 100-main.c 100-shell_sort.c print_array.c -o shell
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./shell 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -271,7 +271,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$  gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 101-main.c 101-cocktail_sort_list.c print_list.c -o cocktail
+	kazzywiz@Kazzywiz:~/sorting_algorithms$  gcc -Wall -Wextra -Werror -pedantic -std=gnu89 101-main.c 101-cocktail_sort_list.c print_list.c -o cocktail
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./cocktail 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -312,7 +312,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 102-main.c 102-counting_sort.c print_array.c -o counting
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 102-main.c 102-counting_sort.c print_array.c -o counting
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./counting 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -355,7 +355,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 103-main.c 103-merge_sort.c print_array.c -o merge
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 103-main.c 103-merge_sort.c print_array.c -o merge
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./merge 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -410,7 +410,7 @@
 	- in the average case
 	- in the worst case
 	```sh
-	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic  -std=gnu89 104-main.c 104-heap_sort.c print_array.c -o heap
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 104-main.c 104-heap_sort.c print_array.c -o heap
 	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./heap 
 	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
 
@@ -440,6 +440,25 @@
 	19, 13, 7, 48, 52, 71, 73, 86, 96, 99
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 	13, 7, 19, 48, 52, 71, 73, 86, 96, 99
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+
+	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ 
+	```
+9. [Radix sort](./105-radix_sort.c) :
+- Write a function that sorts an array of integers in ascending order using the [Radix sort](https://en.wikipedia.org/wiki/Radix_sort) algorithm
+
+	- Prototype: `void radix_sort(int *array, size_t size);`
+	- You must implement the `LSD` radix sort algorithm
+	- You can assume that `array` will contain only numbers `>= 0`
+	- You are allowed to use `malloc` and `free` for this task
+	- You’re expected to print the `array` each time you increase your `significant digit` (See example below)
+	```sh
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 105-main.c 105-radix_sort.c print_array.c -o radix
+	kazzywiz@Kazzywiz:~/sorting_algorithms$ ./radix 
+	19, 48, 99, 71, 13, 52, 96, 73, 86, 7
+
+	71, 52, 13, 73, 96, 86, 7, 48, 19, 99
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 
 	7, 13, 19, 48, 52, 71, 73, 86, 96, 99
